@@ -27,12 +27,17 @@ ARTICLES = [
 # Methods to generate the newsletter
 #########################
 
-def calculate_recipients
+#def calculate_recipients
+  #subscribers.each do |emails|
+    #emails != unsubsribed.each
+    
   # Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
   # write a method that will return an array of only the subscribers who haven't unsubscribed
-end
+ # end
+#end
 
-def first_n_articles(number_of_articles
+def first_n_articles(number_of_articles)
+  #binding.pry
   ARTICLES.first(number_of_articles)
 end
 
@@ -76,11 +81,11 @@ def print_newsletter(number)
 
   puts "\nBODY:"
   format_subject
-  articles = first_n_articles(number)
+  articles = first_n_articles(number.to_i)
   print_many_articles(articles)
   puts format_footer(CAMPUS)
 
-  end
+
 end
 
 def run
