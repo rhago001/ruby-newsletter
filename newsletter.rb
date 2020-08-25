@@ -59,11 +59,11 @@ def print_many_articles(articles)
 end
 
 def format_campus_location(campus)
-  "Flatiron #{campus["name"]}"
+  location = "Flatiron #{campus[:name]}"
 end
 
 def format_subject
-  puts "#{format_campus_location(CAMPUS)} Newsletter - #{DATE}\n\n"
+  print "#{format_campus_location(CAMPUS)} Newsletter - #{DATE}\n\n"
 end
 
 def format_footer(campus)
