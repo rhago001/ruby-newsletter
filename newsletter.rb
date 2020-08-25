@@ -27,14 +27,18 @@ ARTICLES = [
 # Methods to generate the newsletter
 #########################
 
-#def calculate_recipients
-  #subscribers.each do |emails|
-    #emails != unsubsribed.each
-    
-  # Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
-  # write a method that will return an array of only the subscribers who haven't unsubscribed
- # end
-#end
+
+#Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
+#write a method that will return an array of only the subscribers who haven't unsubscribed
+def calculate_recipients
+  correct_email = []
+  SUBSCRIBERS.each do |email| 
+    if !UNSUBSCRIBED.include?(email)
+      correct_email << email
+    end
+  end
+  correct_email.join(", ")
+end
 
 def first_n_articles(number_of_articles)
   #binding.pry
@@ -42,16 +46,23 @@ def first_n_articles(number_of_articles)
 end
 
 def print_recipients
+  print calculate_recipients
   # Write a method that uses the output of calculate_recipients
   # and returns a list of emails separated by commas
   # Ex) "abc@email.com, def@email.com, ghi@email.com"
 end
 
 def print_one_article(article)
+  article{:author}
+  article{:title}
+  article{:text}
+  binding.pry
+  #ARTICLES.each 
   # Write a method that will take an article hash
   # and print the title, author and text as a formatted string
   # See the README/sample output for examples
 end
+print_one_article(ARTICLES)
 
 def print_many_articles(articles)
   # Write a method that will take in an array of article hashes
@@ -79,7 +90,7 @@ def print_newsletter(number)
   print "RECIPIENTS: "
   print_recipients
 
-  puts "\nBODY:"
+  puts "\n\nBODY:"
   format_subject
   articles = first_n_articles(number.to_i)
   print_many_articles(articles)
